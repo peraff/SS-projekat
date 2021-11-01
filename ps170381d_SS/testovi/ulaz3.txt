@@ -1,0 +1,19 @@
+.extern E
+
+.text
+mov B(%r7),B(%r7)
+addb B(%r6),-3(%r3)
+Labela:testb %r4h,%r5
+
+.section mojaSek
+xchg 3,2
+MM:subb MM,B
+B: addw Labela(%pc),E
+A:
+
+
+.data
+.skip 8
+call A
+
+.bss

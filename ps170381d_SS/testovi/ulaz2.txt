@@ -1,0 +1,29 @@
+.global A
+.extern JJ
+
+.equ M,12
+.equ MM,A-C+5-6+M
+.equ B,A
+.equ S,JJ
+
+.section .text
+.word A,C
+jgt *C(%r7)
+T:.byte S
+F:.byte 1
+.word B
+
+ret
+
+.data
+halt
+iret
+ret
+.byte 3,5,6
+C:
+.byte MM
+.word 5,12,256,512
+.word M
+A:.word B
+  jne 13
+.end

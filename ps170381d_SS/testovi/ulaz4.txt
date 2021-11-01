@@ -1,0 +1,23 @@
+.extern A
+
+.section .text
+lab: .word 7
+gcc: xor $5,(%r4)
+jeq B
+
+.section data 
+push %r3
+jgt *%r6
+subb A(%r4)
+shl lab(%r1),%r2
+jne *B(%r7)
+B:
+xchg B,A
+pop %r4
+
+addb %(r5),$A
+jmp A
+
+halt
+
+.end

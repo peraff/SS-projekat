@@ -1,0 +1,19 @@
+.extern pf,getc
+  .global main,B,la1
+.section .bss
+.skip 5
+
+
+.section .data
+   .skip 11
+       lab:
+       .word 4,5,6
+       la1:
+.byte 10,11,12
+
+.text 
+.skip 3
+main: 
+B: 
+C: 
+.end
